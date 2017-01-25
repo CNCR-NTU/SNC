@@ -27,6 +27,5 @@ Model Controller Software
 ### Contacts ###
 
 * Pedro Machado <pedro.baptistamachado@ntu.ac.uk>
-* Alicia Costalago Meruelo <alicia.costalagomeruelo@ntu.ac.uk>
 * Kofi Appiah <kofi.appiah@ntu.ac.uk>
 * Martin McGinnity <martin.mcginnity@ntu.ac.uk>
