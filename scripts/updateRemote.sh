@@ -11,12 +11,12 @@ do
 	sshpass -p 'sielegans2013' ssh pedro@100.100.0.$I ./update.sh
 done
 
-for J in {0..119}
+for I in {0..119}
 do
 	echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	echo "100.100.1.$J"
+	echo "100.100.1.$I"
 	echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-sshpass -p 'sielegans2013' ssh pedro@100.100.1.$J ./update.sh
+	sshpass -p 'sielegans2013' ssh pedro@100.100.1.$I ./update.sh
 done
 echo "++++++++++++++++++++++++++++++++++++++++++"
 date

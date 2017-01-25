@@ -9,7 +9,6 @@ import threadsDef as td
 import struct
 from subprocess import Popen, PIPE
 import shlex
-# hello
     
 class HTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -124,4 +123,24 @@ def TCPclient(packet):
             print("Error. The packet was not transmited!")
     finally:
         sock.close()
+
+def UDPclient(packet):
+    UDP_IP = "100.100.1.254"
+    UDP_PORT = 4000
+    log ="[IM dm - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Sending packet: "+str(packet)+" to ", UDP_IP+":"+str(UDP_PORT)
+    # file=open("logs/UDPclient.log","a+")
+    # file.write("\n"+str(log))
+    # file.close()
+    print(log)
+    try:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        sock.sendto(packet, (UDP_IP, UDP_PORT))
+    finally:
+        log = "[IM dm - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] A UDP packet was transmited with success!"
+        # file=open("logs/UDPclient.log","a+")
+        # file.write("\n"+log)
+        # file.close()
+        print(log)
 

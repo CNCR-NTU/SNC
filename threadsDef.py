@@ -1099,11 +1099,13 @@ def IM(qIMi,qIMo):
                 if ax=="spikeRes":
                     log = "[IM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Sending pike results to the IM!"
                     print(log)
-                    dm.TCPclient(aux[1])
+                    #dm.TCPclient(aux[1])
+                    dm.UDPclient(aux[1])
                 elif ax=="muscleRes":
                     log = "[IM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Sending muscle results to the IM!"
                     print(log)
-                    dm.TCPclient(aux[1])
+                    #dm.TCPclient(aux[1])
+                    dm.UDPclient(aux[1])
 
     aux=qIMi.get()
     qIMi.task_done()
