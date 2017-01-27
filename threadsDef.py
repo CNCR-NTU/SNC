@@ -160,6 +160,15 @@ class stimulus:
     def ls_configuredStim(self):
         return self.configuredStim
 
+    def check_stim(self,value):
+        tmp=False
+        if len(self.configuredStim)>0:
+            for i in range(0,len(self.configuredStim),1):
+                if self.configuredStim[i]==value:
+                    tmp=True
+        return tmp
+
+
     def ls_size_configuredStim(self):
         return len(self.configuredStim)
 
@@ -982,10 +991,13 @@ def MC(qi,qo):
                         if confFlag==True and simConfFlag==True:
                             if neuronFlag==True:
                                 # [startTmstp, endTmstp, itemId, value A, Value B, Value C]
-                                if neuron.check_itemId(ax[25:27])[0]==True:
-                                    log = "[NM - " + time.strftime(
-                                        "%d/%m/%Y %H:%M:%S") + "] A preconfigured processed!"
-                                    stim.set_pcs(ax[0:2],[ax[5:13], ax[17:25],ax[25:27],ax[27:31],ax[31:35],ax[35:39]])
+                                if stimFlag==True:
+                                    if stim.check_stim((ax[25:27])[0])==True:
+                                        log = "[NM - " + time.strftime(
+                                            "%d/%m/%Y %H:%M:%S") + "] A preconfigured processed!"
+                                        stim.set_pcs(ax[0:2],[ax[5:13], ax[17:25],ax[25:27],ax[27:31],ax[31:35],ax[35:39]])
+                                    else:
+                                        print("WARNING: Stimulus not initialised and therefore has been ignored.")
                                 else:
                                     print("WARNING: Stimulus not initialised and therefore has been ignored.")
                             elif confFlag == True and muscleCount > 0:
