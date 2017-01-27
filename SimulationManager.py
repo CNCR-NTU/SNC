@@ -37,8 +37,8 @@ if __name__ == "__main__":
     ip0=int(IP[8:9])
     ip1 = int(IP[10:len(IP)])
     if ip0==1 and 46<ip1<74:
-        type="Muscle # "+str(((ip1+ip0*256)-302))
-    elif ip0==1 and ip1<47:
+        type="Neuron #"+str(ip1+ip0*256)+" ,Muscle # "+str(((ip1+ip0*256)-302))
+    elif ip0==1 and (ip1<47 or 73<ip1<119):
         type="Neuron # "+str(ip1+ip0*256)
     elif ip0==0:
         type = "Neuron # " + str(ip1)
