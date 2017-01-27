@@ -134,8 +134,6 @@ def UDPclient(packet):
     print(log)
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         sock.sendto(packet, (UDP_IP, UDP_PORT))
     finally:
         log = "[IM dm - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] A UDP packet was transmited with success!"
