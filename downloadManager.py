@@ -111,7 +111,7 @@ class MyUDPHandler(socketserver.BaseRequestHandler):
 
 def TCPclient(packet):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    HOST, PORT = "100.100.1.110", 3000
+    HOST, PORT = "100.100.1.254", 3000
     print("Sending packet: ", packet, " to ", HOST, ":",PORT)
     try:
         sock.connect((HOST, PORT))
