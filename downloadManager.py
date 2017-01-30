@@ -126,7 +126,7 @@ def TCPclient(packet):
 
 def UDPclient(packet):
     UDP_IP = "100.100.1.254"
-    UDP_PORT = 4000
+    UDP_PORT = 4001
     log ="[IM dm - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Sending packet: "+str(packet)+" to ", UDP_IP+":"+str(UDP_PORT)
     # file=open("logs/UDPclient.log","a+")
     # file.write("\n"+str(log))
