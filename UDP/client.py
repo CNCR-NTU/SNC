@@ -5,7 +5,7 @@ import time
 UDP_IP = "100.100.1.255"
 UDP_PORT = 4000
 #reset
-msg = b'\x00\x00\xff\xfc\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+#msg = b'\x00\x00\xff\xfc\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
 
 
 #msg+= struct.pack(">H",1) #dest id
@@ -19,20 +19,20 @@ msg = b'\x00\x00\xff\xfc\x0f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
 #msg+= struct.pack(">H", 2) # timeout period
 #msg+= struct.pack(">H", 3) # number of neurons
 #msg+= struct.pack(">B", 4) # number of muscles
-print(len(msg))
+#print(len(msg))
  
-print("UDP target IP:", UDP_IP)
-print("UDP target port:", UDP_PORT)
-print("message:", msg)
+#print("UDP target IP:", UDP_IP)
+#print("UDP target port:", UDP_PORT)
+#print("message:", msg)
  
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-sock.sendto(msg, (UDP_IP, UDP_PORT)) 
+#sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+#sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+#sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+#sock.sendto(msg, (UDP_IP, UDP_PORT)) 
 
-time.sleep(1)
-#configure simulation
-msg=b'\x00\x00\xff\xfc\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x19\x00\x00\x03\xe8\x00\x00\x00\x00\x00\x00\x00\x7f\x00\x00\x00\x00\x00\x00\x00\x02\x00\x01\x00\x05\x00\x02'
+#time.sleep(1)
+#Send run step
+msg=b'\x00\x00\xff\xff\r\x00\x00\x00\x00\x00\x00=\xa2\x00\x00\x00&\x99=\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
 print(len(msg))
  
 print("UDP target IP:", UDP_IP)

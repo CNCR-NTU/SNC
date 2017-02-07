@@ -941,7 +941,6 @@ def MC(qi,qo):
                         if confFlag==True and neuronFlag == True:
                             del neuron
                             del ids
-                            del res
                             neuronFlag = False
                         elif confFlag==True and muscleCount > 0:
                             muscleCount=0
@@ -952,7 +951,6 @@ def MC(qi,qo):
                                 del res[i]
                             del muscles
                             del stim
-                            del res
                             muscleSyncCount = 0
                         confFlag = False
                         rtwFlag = False
@@ -1036,14 +1034,15 @@ def MC(qi,qo):
             del neuron
             del ids
             del res
+        if stimFlag == True:
+            del stim
         elif muscleCount>0:
-            del ids
             for i in range(0,len(muscles),1):
                 del muscles[i]
                 del stim[i]
                 del res[i]
+            del ids
             del muscles
-            del stim
             del res
 
 
