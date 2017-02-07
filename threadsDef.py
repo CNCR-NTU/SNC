@@ -212,7 +212,7 @@ class stimulus:
     #################################################################################
 
     def __del__(self):
-        print("Deleting simulation stimulus related data, for neuron/muscle ", self.nmid, " !")
+        print("Deleting simulation related data, for neuron/muscle ", self.nmid, " !")
 
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 class results:
@@ -952,7 +952,6 @@ def MC(qi,qo):
                             del ids
                             for i in range(0, len(muscles), 1):
                                 del muscles[i]
-                                del stim[i]
                                 del res[i]
                             del muscles
                             del stim
