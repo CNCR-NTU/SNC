@@ -1044,8 +1044,8 @@ def MC(qi,qo):
             del neuron
             del ids
             del res
-        if stimFlag == True:
-            del stim
+            if stimFlag == True:
+                del stim
         elif muscleCount>0:
             log = "[NM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Deleting muscle data from memory!"
             print(log)
