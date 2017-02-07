@@ -1051,7 +1051,6 @@ def MC(qi,qo):
             print(log)
             for i in range(0,len(muscles),1):
                 del muscles[i]
-                del stim[i]
                 del res[i]
             del ids
             del muscles
