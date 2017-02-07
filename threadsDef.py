@@ -1032,16 +1032,23 @@ def MC(qi,qo):
     qi.task_done()
     ax=aux[0]
     if ax=="close":
-        log="[NM - " + time.strftime("%d/%m/%Y %H:%M:%S")+"] Deleting simulation data from memory!"
+        log="[NM - " + time.strftime("%d/%m/%Y %H:%M:%S")+"] Closing service!"
+        print(log)
         if simConfFlag == True:
+            log = "[NM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Deleting simulation data from memory!"
+            print(log)
             del sim
         if neuronFlag == True:
+            log = "[NM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Deleting neuron data from memory!"
+            print(log)
             del neuron
             del ids
             del res
         if stimFlag == True:
             del stim
         elif muscleCount>0:
+            log = "[NM - " + time.strftime("%d/%m/%Y %H:%M:%S") + "] Deleting muscle data from memory!"
+            print(log)
             for i in range(0,len(muscles),1):
                 del muscles[i]
                 del stim[i]
