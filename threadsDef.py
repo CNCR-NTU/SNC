@@ -860,12 +860,14 @@ def MC(qi,qo):
                                     muscleSyncCount =0
                                 else:
                                     muscleSyncCount+=1
-                            ptimestamp+=1
+                            ptimestamp=struct.unpack(">Q", ax[5:13])[0]
                             sim.inc_timestamp(struct.pack(">Q",ptimestamp))
                             log = "[NM - " + time.strftime(
                                 "%d/%m/%Y %H:%M:%S") + "] Timestamp processed!"
                             print(log)
                         else:
+                            if simConfFlag == True:
+                                del sim
                             log = "[NM - " + time.strftime(
                                 "%d/%m/%Y %H:%M:%S") + "] WARNING: New timestamp ignored!"
                             print(log)
