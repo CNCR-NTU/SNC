@@ -862,9 +862,12 @@ def MC(qi,qo):
                                     muscleSyncCount+=1
                             ptimestamp+=1
                             sim.inc_timestamp(struct.pack(">Q",ptimestamp))
+                            log = "[NM - " + time.strftime(
+                                "%d/%m/%Y %H:%M:%S") + "] Timestamp processed!"
+                            print(log)
                         else:
                             log = "[NM - " + time.strftime(
-                                "%d/%m/%Y %H:%M:%S") + "] WARNING: New timestam ignored!"
+                                "%d/%m/%Y %H:%M:%S") + "] WARNING: New timestamp ignored!"
                             print(log)
                         # check RTWs
 
